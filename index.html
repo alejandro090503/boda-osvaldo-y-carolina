@@ -542,27 +542,35 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 
 /* ============ DRESS ============ */
 .dress{text-align:center}
-.dress h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:20px}
-.dress-sub{font-family:var(--script);color:var(--gold);font-size:34px;margin-bottom:20px;line-height:1}
-.dress-note{font-family:var(--italiana);font-size:14px;letter-spacing:.35em;text-transform:uppercase;color:var(--ink-soft);padding-left:.35em;margin-bottom:64px}
-.dress-swatches{display:flex;justify-content:center;gap:clamp(22px,4vw,48px);flex-wrap:wrap}
+.dress h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:10px}
+.dress-sub{font-family:var(--italiana);font-size:clamp(11px,1.5vw,13px);letter-spacing:.44em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:52px;padding-left:.44em}
+.dress-note{font-family:var(--italiana);font-size:11px;letter-spacing:.38em;text-transform:uppercase;color:var(--ink-soft);padding-left:.38em;margin-bottom:30px;opacity:.6}
+/* Two-column garment layout */
+.dress-cols{display:flex;align-items:flex-start;justify-content:center;gap:0;margin-bottom:52px;flex-wrap:wrap}
+.dress-col{flex:1;min-width:190px;max-width:320px;text-align:center}
+.dress-col-head{font-family:var(--sans);font-size:clamp(15px,2vw,18px);font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:26px;padding-bottom:10px;border-bottom:1px solid rgba(201,162,75,.22)}
+.dress-figures{display:flex;justify-content:center;align-items:flex-end;gap:clamp(14px,3vw,32px)}
+.garment-item{display:flex;flex-direction:column;align-items:center;gap:7px}
+.garment-item svg{width:clamp(56px,8.5vw,76px);height:auto;display:block;filter:drop-shadow(0 4px 10px rgba(15,31,63,.18))}
+.garment-label{font-family:var(--italiana);font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--ink-soft)}
+.dress-vline{width:1px;background:linear-gradient(to bottom,transparent,var(--gold) 12%,var(--gold) 88%,transparent);align-self:stretch;margin:0 clamp(14px,3vw,36px);flex-shrink:0}
+/* Swatches — smaller */
+.dress-swatches{display:flex;justify-content:center;gap:clamp(10px,1.8vw,20px);flex-wrap:wrap}
 .swatch{text-align:center}
 .swatch-c{
-  width:clamp(70px,10vw,100px);height:clamp(70px,10vw,100px);
-  border-radius:50%;margin:0 auto 18px;
+  width:clamp(32px,4vw,42px);height:clamp(32px,4vw,42px);
+  border-radius:50%;margin:0 auto 8px;
   box-shadow:
-    inset 0 -8px 20px rgba(0,0,0,.15),
-    0 1px 2px rgba(15,31,63,.05),
-    0 10px 26px -10px rgba(15,31,63,.22),
-    0 34px 80px -40px rgba(15,31,63,.35);
-  border:1px solid var(--hair);position:relative;
+    inset 0 -3px 8px rgba(0,0,0,.15),
+    0 3px 10px -5px rgba(15,31,63,.28);
+  border:1px solid rgba(15,31,63,.08);position:relative;
 }
 .swatch-c::after{
-  content:"";position:absolute;top:14%;left:22%;width:30%;height:22%;
+  content:"";position:absolute;top:14%;left:22%;width:28%;height:20%;
   border-radius:50%;
-  background:radial-gradient(circle, rgba(255,255,255,.4), transparent 70%);
+  background:radial-gradient(circle, rgba(255,255,255,.42), transparent 70%);
 }
-.swatch-n{font-family:var(--sans);font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-soft);padding-left:.4em;font-weight:500}
+.swatch-n{font-family:var(--sans);font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:var(--ink-soft);padding-left:.4em;font-weight:500}
 
 /* ============ GALLERY — RUEDA DE LA FORTUNA ============ */
 .gallery{padding:min(14vh,130px) 0 min(18vh,170px)}
@@ -1379,15 +1387,161 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <section class="section-bg dress">
     <div class="container">
       <div class="eyebrow">Código de vestimenta</div>
-      <h2>Formal <em>·</em> Semiformal</h2>
-      <div class="dress-sub">elegancia para una tarde de celebración</div>
-      <div class="dress-note">Colores sugeridos &nbsp;—&nbsp; evita blanco, rojo y azul cobalto</div>
+      <h2>Dress <em>Code</em></h2>
+      <div class="dress-sub">Formal &nbsp;·&nbsp; o &nbsp;·&nbsp; Semiformal</div>
+
+      <div class="dress-cols">
+
+        <!-- ——— ELLOS ——— -->
+        <div class="dress-col">
+          <div class="dress-col-head">Ellos</div>
+          <div class="dress-figures">
+
+            <!-- TRAJE / TUXEDO -->
+            <div class="garment-item">
+              <svg viewBox="0 0 80 200" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Silueta completa: saco + pantalón -->
+                <path d="M40 14 L35 21 C22 25 5 33 3 46 C1 65 3 86 6 104 L16 200 L37 200 C37 158 39 130 40 120 C41 130 43 158 43 200 L64 200 L74 104 C77 86 79 65 77 46 C75 33 58 25 45 21 Z" fill="#1E3A6B" stroke="#0F1F3F" stroke-width="1.5"/>
+                <!-- Línea de tiro del saco -->
+                <line x1="6" y1="104" x2="74" y2="104" stroke="#0F1F3F" stroke-width="0.7" opacity="0.45"/>
+                <!-- Raya del pantalón -->
+                <line x1="37.5" y1="104" x2="37" y2="126" stroke="rgba(255,255,255,0.13)" stroke-width="0.7"/>
+                <line x1="42.5" y1="104" x2="43" y2="126" stroke="rgba(255,255,255,0.13)" stroke-width="0.7"/>
+                <!-- Camisa blanca visible entre solapas -->
+                <path d="M40 14 L35 21 L34 62 C36 84 38 96 40 99 C42 96 44 84 46 62 L45 21 Z" fill="#F5F3EE"/>
+                <!-- Puntas del cuello de camisa -->
+                <path d="M35 21 L37 28 L40 23" stroke="#D5D0C8" stroke-width="0.8" fill="none"/>
+                <path d="M45 21 L43 28 L40 23" stroke="#D5D0C8" stroke-width="0.8" fill="none"/>
+                <!-- Solapa izquierda (pico — estilo tuxedo) -->
+                <path d="M35 21 C22 24 8 31 5 43 L20 59 L34 47 Z" fill="#1E3A6B" stroke="#0F1F3F" stroke-width="1.4"/>
+                <line x1="34" y1="47" x2="20" y2="59" stroke="#0F1F3F" stroke-width="1.1"/>
+                <!-- Solapa derecha -->
+                <path d="M45 21 C58 24 72 31 75 43 L60 59 L46 47 Z" fill="#1E3A6B" stroke="#0F1F3F" stroke-width="1.4"/>
+                <line x1="46" y1="47" x2="60" y2="59" stroke="#0F1F3F" stroke-width="1.1"/>
+                <!-- Corbatín / bow tie -->
+                <path d="M39 18 L33 21 L39 24 Z" fill="#C9A24B" stroke="#8C6F2A" stroke-width="0.8"/>
+                <path d="M41 18 L47 21 L41 24 Z" fill="#C9A24B" stroke="#8C6F2A" stroke-width="0.8"/>
+                <ellipse cx="40" cy="21" rx="1.8" ry="2.5" fill="#C9A24B" stroke="#8C6F2A" stroke-width="0.8"/>
+                <!-- Botón del saco -->
+                <circle cx="40" cy="80" r="1.8" stroke="#0F1F3F" stroke-width="1" fill="none"/>
+                <!-- Pañuelo de bolsillo -->
+                <path d="M60 46 L63 39 L68 42 L65 49" fill="#F5F3EE" stroke="#C9A24B" stroke-width="0.9"/>
+                <!-- Puños de camisa -->
+                <line x1="3.5" y1="90" x2="5.5" y2="100" stroke="rgba(255,255,255,0.22)" stroke-width="2.5"/>
+                <line x1="76.5" y1="90" x2="74.5" y2="100" stroke="rgba(255,255,255,0.22)" stroke-width="2.5"/>
+              </svg>
+              <span class="garment-label">Etiqueta</span>
+            </div>
+
+            <!-- SACO / BLAZER -->
+            <div class="garment-item">
+              <svg viewBox="0 0 80 200" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Silueta completa: blazer + pantalón -->
+                <path d="M40 14 L34 22 C21 26 5 35 3 48 C1 67 3 89 7 107 L17 200 L37 200 C37 158 39 132 40 122 C41 132 43 158 43 200 L63 200 L73 107 C77 89 79 67 77 48 C75 35 59 26 46 22 Z" fill="#1E3A6B" stroke="#0F1F3F" stroke-width="1.5"/>
+                <!-- Línea tiro del saco -->
+                <line x1="7" y1="107" x2="73" y2="107" stroke="#0F1F3F" stroke-width="0.7" opacity="0.45"/>
+                <!-- Raya pantalón -->
+                <line x1="37.5" y1="107" x2="37" y2="128" stroke="rgba(255,255,255,0.13)" stroke-width="0.7"/>
+                <line x1="42.5" y1="107" x2="43" y2="128" stroke="rgba(255,255,255,0.13)" stroke-width="0.7"/>
+                <!-- Camisa blanca -->
+                <path d="M40 14 L34 22 L33 70 C35 90 37 104 40 107 C43 104 45 90 47 70 L46 22 Z" fill="#F5F3EE"/>
+                <!-- Puntas cuello camisa -->
+                <path d="M34 22 L36 30 L40 25" stroke="#CCC" stroke-width="0.8" fill="none"/>
+                <path d="M46 22 L44 30 L40 25" stroke="#CCC" stroke-width="0.8" fill="none"/>
+                <!-- Solapa izquierda (muesca — estilo blazer) -->
+                <path d="M34 22 C22 26 8 34 6 46 L22 62 L33 50 Z" fill="#1E3A6B" stroke="#0F1F3F" stroke-width="1.4"/>
+                <line x1="33" y1="50" x2="22" y2="62" stroke="#0F1F3F" stroke-width="1.1"/>
+                <!-- Solapa derecha -->
+                <path d="M46 22 C58 26 72 34 74 46 L58 62 L47 50 Z" fill="#1E3A6B" stroke="#0F1F3F" stroke-width="1.4"/>
+                <line x1="47" y1="50" x2="58" y2="62" stroke="#0F1F3F" stroke-width="1.1"/>
+                <!-- Corbata (dorada con rayas) -->
+                <path d="M38 24 L42 24 L44 76 L40 84 L36 76 Z" fill="#C9A24B" stroke="#8C6F2A" stroke-width="0.9"/>
+                <!-- Nudo de corbata -->
+                <path d="M37 25 Q40 22 43 25 Q42 30 40 28 Q38 30 37 25 Z" fill="#8C6F2A"/>
+                <!-- Rayas de corbata -->
+                <line x1="38.5" y1="36" x2="42" y2="33" stroke="rgba(255,255,255,0.28)" stroke-width="1.4"/>
+                <line x1="38" y1="50" x2="42" y2="47" stroke="rgba(255,255,255,0.28)" stroke-width="1.4"/>
+                <line x1="37.5" y1="64" x2="41.5" y2="61" stroke="rgba(255,255,255,0.28)" stroke-width="1.4"/>
+                <!-- 2 botones del blazer -->
+                <circle cx="40" cy="72" r="1.8" stroke="#0F1F3F" stroke-width="1" fill="none"/>
+                <circle cx="40" cy="86" r="1.8" stroke="#0F1F3F" stroke-width="1" fill="none"/>
+                <!-- Bolsillos laterales -->
+                <path d="M14 86 L14 92 L24 92 L24 86" stroke="#0F1F3F" stroke-width="1" fill="none"/>
+                <path d="M66 86 L66 92 L56 92 L56 86" stroke="#0F1F3F" stroke-width="1" fill="none"/>
+                <!-- Botones de manga (3 por manga) -->
+                <circle cx="5" cy="93" r="1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
+                <circle cx="5" cy="97" r="1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
+                <circle cx="75" cy="93" r="1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
+                <circle cx="75" cy="97" r="1" stroke="rgba(255,255,255,0.35)" stroke-width="0.8" fill="none"/>
+              </svg>
+              <span class="garment-label">Saco</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ——— DIVISOR ——— -->
+        <div class="dress-vline" aria-hidden="true"></div>
+
+        <!-- ——— ELLAS ——— -->
+        <div class="dress-col">
+          <div class="dress-col-head">Ellas</div>
+          <div class="dress-figures">
+
+            <!-- VESTIDO COCKTAIL (corto, A-line) -->
+            <div class="garment-item">
+              <svg viewBox="0 0 80 175" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Silueta completa: escote V, cuerpo ajustado, falda A-line -->
+                <path d="M40 26 L52 8 C55 14 57 36 57 66 C57 74 55 80 52 84 C58 96 64 122 66 168 L14 168 C16 122 22 96 28 84 C25 80 23 74 23 66 C23 36 25 14 28 8 Z" fill="#1E3A6B" stroke="#0F1F3F" stroke-width="1.5"/>
+                <!-- Tirantes finos -->
+                <line x1="28" y1="8" x2="24" y2="2" stroke="#0F1F3F" stroke-width="1.2"/>
+                <line x1="52" y1="8" x2="56" y2="2" stroke="#0F1F3F" stroke-width="1.2"/>
+                <!-- Escote en V -->
+                <path d="M28 8 Q40 24 52 8" stroke="#0F1F3F" stroke-width="1.1" fill="none"/>
+                <!-- Costura de cintura -->
+                <path d="M23 66 C26 74 32 78 40 78 C48 78 54 74 57 66" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+                <!-- Pliegues de la falda (sutiles) -->
+                <path d="M33 84 C29 104 21 138 18 168" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+                <path d="M47 84 C51 104 59 138 62 168" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
+                <!-- Dobladillo -->
+                <path d="M14 168 Q40 165 66 168" stroke="#0F1F3F" stroke-width="0.9" fill="none"/>
+              </svg>
+              <span class="garment-label">Cocktail</span>
+            </div>
+
+            <!-- VESTIDO LARGO (gown, elegante) -->
+            <div class="garment-item">
+              <svg viewBox="0 0 80 220" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Silueta completa: escote V, cuerpo ceñido, falda larga A-line -->
+                <path d="M40 28 L52 10 C55 16 57 38 57 70 C57 78 55 84 52 88 C56 104 60 150 62 215 L18 215 C20 150 24 104 28 88 C25 84 23 78 23 70 C23 38 25 16 28 10 Z" fill="#1E3A6B" stroke="#0F1F3F" stroke-width="1.5"/>
+                <!-- Tirantes finos -->
+                <line x1="28" y1="10" x2="24" y2="4" stroke="#0F1F3F" stroke-width="1.2"/>
+                <line x1="52" y1="10" x2="56" y2="4" stroke="#0F1F3F" stroke-width="1.2"/>
+                <!-- Escote en V -->
+                <path d="M28 10 Q40 26 52 10" stroke="#0F1F3F" stroke-width="1.1" fill="none"/>
+                <!-- Costura de cintura -->
+                <path d="M23 70 C26 78 32 82 40 82 C48 82 54 78 57 70" stroke="rgba(255,255,255,0.2)" stroke-width="0.8" fill="none"/>
+                <!-- Caída elegante de la falda (líneas sutiles) -->
+                <path d="M36 88 C34 120 31 165 30 215" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+                <path d="M44 88 C46 120 49 165 50 215" stroke="rgba(255,255,255,0.07)" stroke-width="0.8"/>
+                <!-- Dobladillo -->
+                <path d="M18 215 Q40 212 62 215" stroke="#0F1F3F" stroke-width="0.9" fill="none"/>
+              </svg>
+              <span class="garment-label">Vestido largo</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /.dress-cols -->
+
+      <div class="dress-note">Evita blanco &nbsp;·&nbsp; rojo &nbsp;·&nbsp; azul cobalto</div>
       <div class="dress-swatches">
-        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#0F1F3F,#070D1F)"></div><div class="swatch-n">Navy</div></div>
-        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#1E3A6B,#0F1F3F)"></div><div class="swatch-n">Azul noche</div></div>
-        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#C9A24B,#8C6F2A)"></div><div class="swatch-n">Dorado</div></div>
-        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#D4C5B2,#B8A88E)"></div><div class="swatch-n">Taupe</div></div>
-        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#0A0F1C,#000000)"></div><div class="swatch-n">Negro</div></div>
+        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#D8CAB8,#D4C5B2)"></div><div class="swatch-n">Taupe</div></div>
+        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#333,#000000)"></div><div class="swatch-n">Negro</div></div>
+        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#5dada8,#4b948f)"></div><div class="swatch-n">Teal</div></div>
+        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#ffff77,#ffff00)"></div><div class="swatch-n">Amarillo</div></div>
+        <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#66ffff,#00ffff)"></div><div class="swatch-n">Cyan</div></div>
       </div>
     </div>
   </section>
@@ -1814,7 +1968,8 @@ gsap.fromTo('.countdown .eyebrow, .countdown h2, .countdown-sub',{opacity:0,y:14
 
 // ------ DRESS ------
 gsap.fromTo('.swatch',{opacity:0,scale:.4,y:30},{opacity:1,scale:1,y:0,duration:1.1,stagger:.1,ease:'elastic.out(1,.6)',scrollTrigger:{trigger:'.dress-swatches',start:'top 82%'}});
-gsap.fromTo('.dress .eyebrow, .dress h2, .dress-sub, .dress-note',{opacity:0,y:14},{opacity:1,y:0,duration:.9,stagger:.08,scrollTrigger:{trigger:'.dress',start:'top 78%'}});
+gsap.fromTo('.dress .eyebrow, .dress h2, .dress-sub, .dress-col-head, .dress-note',{opacity:0,y:14},{opacity:1,y:0,duration:.9,stagger:.08,scrollTrigger:{trigger:'.dress',start:'top 78%'}});
+gsap.fromTo('.garment-item',{opacity:0,y:18},{opacity:1,y:0,duration:.7,stagger:.09,ease:'power2.out',scrollTrigger:{trigger:'.dress-cols',start:'top 82%'}});
 
 // ------ GALERÍA — Rueda 3D arrastrable con inercia (estilo nelvi-yessica) ------
 (function initWheel(){
