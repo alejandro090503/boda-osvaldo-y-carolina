@@ -460,6 +460,21 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 .story-initials::before{left:-60px;background:linear-gradient(to right, transparent, var(--gold))}
 .story-initials::after{right:-60px;background:linear-gradient(to left, transparent, var(--gold))}
 
+/* ============ FAMILIA ============ */
+.familia{text-align:center}
+.familia h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:12px}
+.familia-sub{font-family:var(--script);color:var(--gold);font-size:28px;margin-bottom:56px;line-height:1}
+.familia-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:48px 80px;max-width:900px;margin:0 auto}
+.familia-group{flex:1;min-width:260px;max-width:380px;text-align:center}
+.familia-group-title{font-family:var(--italiana);font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);padding-left:.5em;margin-bottom:20px;position:relative;display:inline-block}
+.familia-group-title::after{content:"";display:block;width:40px;height:1px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:10px auto 0}
+.familia-names{font-family:var(--display);font-style:italic;font-size:clamp(18px,2.2vw,22px);color:var(--ink);line-height:1.8;font-weight:400}
+.familia-names em{color:var(--gold);font-style:italic;font-size:.85em}
+.familia-ornament{display:block;margin:0 auto 40px;width:min(240px,55vw);height:auto}
+.familia-special{margin-top:48px;padding-top:36px;border-top:1px solid rgba(201,162,75,.18);max-width:420px;margin-left:auto;margin-right:auto}
+.familia-special-title{font-family:var(--italiana);font-size:11px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);padding-left:.5em;margin-bottom:14px}
+.familia-special-name{font-family:var(--display);font-style:italic;font-size:clamp(17px,2vw,20px);color:var(--ink);font-weight:400}
+
 /* ============ UBICACIONES ============ */
 .locs h2{text-align:center;font-size:clamp(38px,5.5vw,64px);margin-bottom:20px}
 .locs-sub{text-align:center;font-family:var(--italiana);font-size:18px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);padding-left:.3em;margin-bottom:80px}
@@ -554,6 +569,11 @@ h1 em,h2 em,h3 em{font-style:italic;font-weight:500;color:var(--accent)}
 .garment-item svg{width:clamp(56px,8.5vw,76px);height:auto;display:block;filter:drop-shadow(0 4px 10px rgba(15,31,63,.18))}
 .garment-label{font-family:var(--italiana);font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--ink-soft)}
 .dress-vline{width:1px;background:linear-gradient(to bottom,transparent,var(--gold) 12%,var(--gold) 88%,transparent);align-self:stretch;margin:0 clamp(14px,3vw,36px);flex-shrink:0}
+@media(max-width:600px){
+  .dress-cols{flex-direction:column;align-items:center;gap:0}
+  .dress-col{min-width:0;max-width:100%;width:100%}
+  .dress-vline{width:60px;height:1px;align-self:auto;margin:20px auto;background:linear-gradient(to right,transparent,var(--gold) 15%,var(--gold) 85%,transparent)}
+}
 /* Swatches — smaller */
 .dress-swatches{display:flex;justify-content:center;gap:clamp(10px,1.8vw,20px);flex-wrap:wrap}
 .swatch{text-align:center}
@@ -1261,6 +1281,54 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
   <!-- DIVIDER: surface → paper -->
   <div class="seam" style="--from:var(--surface);--to:var(--paper)" aria-hidden="true"></div>
 
+  <!-- FAMILIA -->
+  <section class="section-paper familia">
+    <div class="container">
+      <svg class="familia-ornament" viewBox="0 0 280 50" fill="none" aria-hidden="true">
+        <g stroke="var(--gold)" stroke-width=".8" opacity=".7" fill="none">
+          <path d="M20 25 Q55 10 90 25 Q110 36 130 25"/>
+          <path d="M150 25 Q170 36 190 25 Q225 10 260 25"/>
+          <circle cx="140" cy="25" r="3.5" fill="var(--gold)" stroke="none" opacity=".6"/>
+          <path d="M138 18 Q140 13 142 18" opacity=".6"/>
+          <path d="M138 32 Q140 37 142 32" opacity=".6"/>
+          <path d="M5 25 L20 25" opacity=".4"/>
+          <path d="M260 25 L275 25" opacity=".4"/>
+        </g>
+      </svg>
+      <div class="eyebrow">Con la bendición de</div>
+      <h2>Nuestras <em>familias</em></h2>
+      <div class="familia-sub">quienes nos acompañan con amor</div>
+
+      <div class="familia-grid">
+        <div class="familia-group">
+          <div class="familia-group-title">Padres del novio</div>
+          <div class="familia-names">
+            Rubén Morales<br>
+            <em>&amp;</em><br>
+            Irma Rico
+          </div>
+        </div>
+        <div class="familia-group">
+          <div class="familia-group-title">Padres de la novia</div>
+          <div class="familia-names">
+            Marco Antonio Trinado<br>
+            <em>&amp;</em><br>
+            María Alejandra Trejo
+          </div>
+        </div>
+      </div>
+
+      <div class="familia-special">
+        <div class="familia-special-title">Madrina de anillos</div>
+        <div class="familia-special-name">Victoria Lugo Aguilar</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIVIDER: paper → paper -->
+  <div class="seam" style="--from:var(--paper);--to:var(--paper)" aria-hidden="true"></div>
+
   <!-- UBICACIONES -->
   <section class="section-paper locs">
     <div class="container">
@@ -1549,8 +1617,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
       </div><!-- /.dress-cols -->
 
-      <div class="dress-note" style="text-transform:none;letter-spacing:.15em;font-size:12px;">Colores sugeridos</div>
-      <div class="dress-note" style="margin-top:-18px;">Evita rojo &nbsp;·&nbsp; beige &nbsp;·&nbsp; bugambilia &nbsp;·&nbsp; blanco &nbsp;·&nbsp; azul marino</div>
+      <div class="dress-note">Evita rojo &nbsp;·&nbsp; beige &nbsp;·&nbsp; bugambilia &nbsp;·&nbsp; blanco &nbsp;·&nbsp; azul marino</div>
+      <div class="dress-note" style="text-transform:none;letter-spacing:.15em;font-size:12px;margin-bottom:20px;">Colores sugeridos</div>
       <div class="dress-swatches">
         <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#D8CAB8,#D4C5B2)"></div><div class="swatch-n">Taupe</div></div>
         <div class="swatch"><div class="swatch-c" style="background:linear-gradient(135deg,#333,#000000)"></div><div class="swatch-n">Negro</div></div>
@@ -1929,6 +1997,13 @@ gsap.fromTo('.story h2',{opacity:0,y:28},{opacity:1,y:0,duration:1.3,ease:'power
 gsap.fromTo('.story-initials',{opacity:0,scale:.6,rotate:-8},{opacity:1,scale:1,rotate:0,duration:1.4,ease:'back.out(1.4)',scrollTrigger:{trigger:'.story-initials',start:'top 85%'}});
 
 // ------ LOCATIONS ------
+// ------ FAMILIA ------
+gsap.fromTo('.familia-ornament',{opacity:0,scaleX:0},{opacity:1,scaleX:1,duration:1.2,ease:'power3.out',scrollTrigger:{trigger:'.familia-ornament',start:'top 88%'}});
+gsap.fromTo('.familia .eyebrow, .familia h2, .familia-sub',{opacity:0,y:14},{opacity:1,y:0,duration:.9,stagger:.1,scrollTrigger:{trigger:'.familia',start:'top 78%'}});
+gsap.fromTo('.familia-group',{opacity:0,y:30},{opacity:1,y:0,duration:1.1,stagger:.2,ease:'power3.out',scrollTrigger:{trigger:'.familia-grid',start:'top 82%'}});
+gsap.fromTo('.familia-special',{opacity:0,y:20},{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:'.familia-special',start:'top 88%'}});
+
+// ------ LOCS ------
 gsap.fromTo('.locs .eyebrow',{opacity:0,y:10},{opacity:1,y:0,duration:.9,scrollTrigger:{trigger:'.locs',start:'top 80%'}});
 gsap.fromTo('.locs h2',{opacity:0,y:24},{opacity:1,y:0,duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.locs h2',start:'top 82%'}});
 gsap.fromTo('.locs-sub',{opacity:0,letterSpacing:'1em'},{opacity:1,letterSpacing:'.3em',duration:1.1,ease:'power3.out',scrollTrigger:{trigger:'.locs-sub',start:'top 85%'}});
